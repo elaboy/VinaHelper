@@ -76,12 +76,40 @@ if browse == 1:
 
 
 
+#Write txt file 
+def data(): 
+    content = [receptor.get(), 
+    ligand.get(),
+    center_x.get(), 
+    center_y.get(),
+    center_z.get(), 
+    size_x.get(), 
+    size_y.get(), 
+    size_z.get(),
+    exhaustiveness.get(),
+    out.get()]
+    receptor_out = "receptor = " + str(content[0])
+    ligand_out = 'ligand = ' + str(content[1])
+    center_x_out = 'center_x = ' + str(content[2])
+    center_y_out = 'center_y = ' + str(content[3])
+    center_z_out = 'center_z = ' + str(content[4])
+    size_x_out = 'size_x = ' + str(content[5])
+    size_y_out = 'size_y = ' + str(content[6])
+    size_z_out = 'size_z = ' + str(content[7])
+    exhaustiveness_out = "exhaustiveness = " + str(content[8])
+    out_out = "out = " + str(content[9])
 
+    final =  receptor_out, ligand_out, center_x_out, center_y_out, center_z_out, size_x_out, size_y_out, size_z_out, exhaustiveness_out, out_out
 
+    return "\n".join(str(el) for el in final)
 
-#def config_file():
+def save_text():
+    txt = open("config.txt", 'w')
+    
+    txt.write(data())
 
-
+run_btn = Button(window, text="Run", command=save_text)
+run_btn.grid(column=2, row=11)
 
 
 window.mainloop()
