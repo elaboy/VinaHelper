@@ -111,5 +111,5 @@ def save_text():
 run_btn = Button(window, text="Run", command=save_text)
 run_btn.grid(column=2, row=11)
 
-
-window.mainloop()
+if __name__ == '__main__': 
+    window.mainloop()
