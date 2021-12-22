@@ -1,6 +1,8 @@
+import subprocess
 from tkinter import * 
 from subprocess import * 
 from tkinter.filedialog import askopenfilename
+import shlex
 
 #for multiple files import askopenfiles!
 
@@ -110,12 +112,16 @@ def save_text():
 
 #Run button
 
-run_btn = Button(window, text="Run", command=save_text)
-run_btn.grid(column=2, row=11)
+make_btn = Button(window, text="Make", command=save_text)
+make_btn.grid(column=2, row=11)
 
 #Vina program 
 
+def vina():
+    vina = "vina_1.2.3_windows_x86_64 --config config.txt"
+    subprocess.Popen(vina, shell=True)
 
-
+Vina_btn = Button(window, text="Run Vina", command=vina )
+Vina_btn.grid(column=1, row=14)
 if __name__ == '__main__': 
     window.mainloop()

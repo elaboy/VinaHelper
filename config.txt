@@ -1,0 +1,10 @@
+receptor = C:/Users/elabo/Downloads/vina_1.2 (2).3_linux_x86_64
+ligand = C:/Users/elabo/Downloads/vina_1.2 (1).3_windows_x86_64
+center_x = 34
+center_y = 34
+center_z = 34
+size_x = 34
+size_y = 34
+size_z = 34
+exhaustiveness = 32
+out = wsfe.pdbqt
