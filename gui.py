@@ -2,7 +2,6 @@ import subprocess
 from tkinter import * 
 from subprocess import * 
 from tkinter.filedialog import askopenfilename
-import os
 
 #for multiple files import askopenfiles!
 
