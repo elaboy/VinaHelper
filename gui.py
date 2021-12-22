@@ -101,15 +101,21 @@ def data():
 
     final =  receptor_out, ligand_out, center_x_out, center_y_out, center_z_out, size_x_out, size_y_out, size_z_out, exhaustiveness_out, out_out
 
-    return "\n".join(str(el) for el in final)
+    return "\n".join(str(result) for result in final)
 
 def save_text():
     txt = open("config.txt", 'w')
     
     txt.write(data())
 
+#Run button
+
 run_btn = Button(window, text="Run", command=save_text)
 run_btn.grid(column=2, row=11)
+
+#Vina program 
+
+
 
 if __name__ == '__main__': 
     window.mainloop()
