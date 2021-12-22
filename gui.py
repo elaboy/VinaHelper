@@ -2,11 +2,12 @@ import subprocess
 from tkinter import * 
 from subprocess import * 
 from tkinter.filedialog import askopenfilename
-import shlex
+import os
 
 #for multiple files import askopenfiles!
 
 window = Tk()
+window.title("Vina Helper")
 window.geometry('800x400')
 
 #Labels and Grids column Zero 
@@ -110,18 +111,37 @@ def save_text():
     
     txt.write(data())
 
-#Run button
-
-make_btn = Button(window, text="Make", command=save_text)
-make_btn.grid(column=2, row=11)
-
 #Vina program 
 
-def vina():
+def W_vina():
     vina = "vina_1.2.3_windows_x86_64 --config config.txt"
     subprocess.Popen(vina, shell=True)
+def L_vina():
+    vina = "vina_1.2.3_linux_x86_64 --config config.txt"
+    subprocess.Popen(vina, shell=True)
+def M_vina():
+    vina = "vina_1.2.3_mac_x86_64 --config config.txt"
+    subprocess.Popen(vina, shell=True)
 
-Vina_btn = Button(window, text="Run Vina", command=vina )
-Vina_btn.grid(column=1, row=14)
+#Make config file button
+
+make_btn = Button(window, text="Make", command=save_text)
+make_btn.grid(column=1, row=11)
+
+#Windows Vina
+
+windows_vina_btn = Button(window, text="Run Vina using Windows", command=W_vina )
+windows_vina_btn.grid(column=0, row=20)
+
+#Linux Vina 
+linux_vina_btn = Button(window, text="Run Vina using Linux", command=L_vina)
+linux_vina_btn.grid(column=1, row=20)
+
+#Mac Vina
+mac_vina_btn = Button(window, text="Run Vina using Mac", command=M_vina)
+mac_vina_btn.grid(column=2, row=20)
+
+
+
 if __name__ == '__main__': 
     window.mainloop()
